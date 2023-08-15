@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>NFT preview card component solution using HTML | CSS | Bootstrap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; position:fixed; bottom: 0; color: var(--LITE-CLR) }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    :root {
+      /* || COLORS */
+      --LITE-CLR: hsl(215, 51%, 70%);
+      --CYAN: hsl(178, 100%, 50%);
+      --MAIN-BG: hsl(217, 54%, 11%);
+      --CARD-BG: hsl(216, 50%, 16%);
+      --LINE-CLR: hsl(215, 32%, 27%);
+      --WHITE: hsl(0, 0%, 100%);
+    }
+
+    body {
+      height: 100vh;
+      background: var(--MAIN-BG);
+      font-size: 18px;
+      font-family: 'Outfit', sans-serif;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: var(--CARD-BG);
+      color: var(--LITE-CLR);
+      width: 350px !important;
+      border-color: var(--CARD-BG) !important;
+    }
+
+    .card-img-top {
+      border-color: var(--CARD-BG) !important;
+    }
+
+    .card-img-top:hover {
+      filter:hue-rotate(10);
+    }
+
+    .card-body {
+      padding: 0;
+    }
+
+    .card-title {
+      color: var(--WHITE);
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .card-text {
+      font-weight: 300;
+    }
+
+    .amount {
+      padding-top: 1rem;
+      width:100%;
+    }
+
+    .amount > p:first-child {
+      color: var(--CYAN);
+      font-weight: 600;
+    }
+
+    .avatar-text {
+      display: inline-block;
+      margin-left: 15px;
+    }
+
+    a:link {
+      color: var(--WHITE);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--CYAN);
+    }
+
+    /* || IMAGE HOVER OVERLAY */
+
+    .container-overlay {
+      position: relative;
+      width: 100%;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100;
+      opacity: 0;
+      background: var(--CYAN);
+      transition: 0.3 ease;
+      border-color: var(--CARD-BG) !important;
+    }
+
+    .container-overlay:hover .overlay {
+      opacity: 0.5;
+
+    }
+
+    .overlay-icon {
+      color: var(--WHITE);
+      font-size: 1rem;
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      transition: 0.3 ease;
+      opacity:0;
+    }
+
+    .container-overlay:hover .overlay-icon {
+      opacity: 1 !important;
+    }
+
+   
+  </style>
+</head>
+<body class="d-flex">
+
+  <div class="card p-4 border rounded-4" style="width: 18rem;">
+    <a href="#" class="click-link">
+      <div class="container-overlay">
+        <img src="./images/image-equilibrium.jpg" class="card-img-top border rounded-3 border-opacity-10" alt="...">
+        <div class="overlay border rounded-3 border-opacity-0">
+        </div>
+        <div class="overlay-icon">
+          <svg width="48" height="48" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h48v48H0z"/><path d="M24 9C14 9 5.46 15.22 2 24c3.46 8.78 12 15 22 15 10.01 0 18.54-6.22 22-15-3.46-8.78-11.99-15-22-15Zm0 25c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10Zm0-16c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6Z" fill="#FFF" fill-rule="nonzero"/></g></svg>
+        </div>
+      </div>
+    </a>
+    <div class="card-body pt-4">
+      <h5 class="card-title pt-2"><a href="#">Equilibrium #3429</a></h5>
+      <p class="card-text pt-2">Our Equilibrium collection promotes balance and calm.</p>
+    </div>
+    <div class="amount d-flex justify-content-between">
+      <p><img src="./images/icon-ethereum.svg" alt="ethereum icon" class="pb-1 px-1">0.041 ETH</p>
+      <p><img src="./images/icon-clock.svg" alt="clock icon" class="pb-1 px-2">3 days left</p>
+    </div>
+    <hr style="margin-top: 0;">
+    <div class="avatar">
+      <img src="./images/image-avatar.png" alt="avatar picture" height="40px" class="border border-white rounded-circle">
+     <p class="avatar-text mb-0">Creation of <a href="#">Jules Wyvern</a></p>
+    </div>
+  </div>
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Tabebash</a>.
+  </div>
+  
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/js/bootstrap.js">
+</body>
+</html>
