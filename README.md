@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Tabebash/Nft-preview-card-component)
-- Live Site URL: [Add live site URL here](https://tabebash.github.io/Nft-preview-card-component/)
+- Solution URL: [solution URL](https://github.com/Tabebash/Nft-preview-card-component)
+- Live Site URL: [live site URL](https://tabebash.github.io/Nft-preview-card-component/)
 
 ### Built with
 
